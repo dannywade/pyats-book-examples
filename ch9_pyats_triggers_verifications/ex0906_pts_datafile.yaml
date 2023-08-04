@@ -1,0 +1,11 @@
+# Extend default PTS datafile to inherit the required keys 
+# (class, source, etc.) per the PTS datafile schema 
+extends: "%CALLABLE{genie.libs.sdk.genie_yamls.datafile(pts)}" 
+ 
+bgp: 
+  devices: ["cat8k-rt1", "cat8k-rt2"] 
+  exclude:  
+    - up_time
+
+interface:
+  devices: ["cat8k-rt1", "cat8k-rt2"]

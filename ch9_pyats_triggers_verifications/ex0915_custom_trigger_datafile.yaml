@@ -1,0 +1,6 @@
+extends: "%CALLABLE{genie.libs.sdk.genie_yamls.datafile(trigger)}"
+
+TriggerMyShutNoShutOspf:
+    source:
+        class: ex0915_custom_trigger.MyShutNoShutOspf
+    devices: ["iosv-0", "iosv-1"]

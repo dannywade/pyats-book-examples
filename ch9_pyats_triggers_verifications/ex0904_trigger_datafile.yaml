@@ -1,0 +1,6 @@
+# Extend default trigger datafile to inherit the required keys 
+# (class, source, etc.) per the trigger datafile schema
+extends: "%CALLABLE{genie.libs.sdk.genie_yamls.datafile(trigger)}"
+
+TriggerSleep:
+    devices: ["cat8k-rt1", "cat8k-rt2"]
