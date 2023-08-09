@@ -1,6 +1,5 @@
 from genie import testbed
 from genie.libs.conf.interface.iosxe.interface import Interface
-import pprint
 
 # Load Genie testbed
 testbed = testbed.load(testbed="testbed.yaml")

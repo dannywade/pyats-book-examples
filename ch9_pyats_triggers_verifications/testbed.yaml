@@ -1,5 +1,5 @@
 testbed:
-    name: TTTT - Cat8k Lab
+    name: Cat8k Lab
 devices:
     # terminal_server:
     #     os: linux
@@ -27,7 +27,7 @@ devices:
             # a:
             #     protocol: telnet
             #     proxy: terminal_server
-            #     command: open /TTTT - Cat8k Lab/cat8k-rt2/0
+            #     command: open /Cat8k Lab/cat8k-rt2/0
             cli:
                 protocol: ssh
                 ip: 192.168.7.97
@@ -46,7 +46,7 @@ devices:
             # a:
             #     protocol: telnet
             #     proxy: terminal_server
-            #     command: open /TTTT - Cat8k Lab/cat8k-rt1/0
+            #     command: open /Cat8k Lab/cat8k-rt1/0
             cli:
                 protocol: ssh
                 ip: 192.168.7.96

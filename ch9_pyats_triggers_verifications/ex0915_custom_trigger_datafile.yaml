@@ -1,6 +1,8 @@
 extends: "%CALLABLE{genie.libs.sdk.genie_yamls.datafile(trigger)}"
 
+# Custom trigger
 TriggerMyShutNoShutOspf:
+    # source imports the custom trigger, just as you would any other Python class
     source:
         class: ex0915_custom_trigger.MyShutNoShutOspf
     devices: ["iosv-0", "iosv-1"]
