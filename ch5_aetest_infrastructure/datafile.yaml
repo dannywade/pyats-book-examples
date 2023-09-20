@@ -1,0 +1,37 @@
+extends: base.yaml 
+ 
+# testscript parameters 
+parameters:
+    google_dns: 8.8.8.8
+    # Adds to existing cloudflare DNS from base.yaml
+ 
+testcases: 
+    BGPTestcase: 
+        # testcase uid
+        uid: routing_test_1 
+
+        # list of groups that testcase belongs to
+        groups: [routing] 
+
+        # testcase parameters
+        parameters: 
+            local_asn: 65000 
+            remote_asn: 65001 
+
+        # testcase class variable  
+        expected_routes: 5 
+ 
+    OSPFTestcase: 
+        # testcase uid
+        uid: routing_test_2
+
+        # list of groups that testcase belongs to
+        groups: [routing] 
+ 
+        # testcase parameters 
+        parameters: 
+            process_id: 2 
+            area: 0 
+
+        # testcase class variable 
+        expected_routes: 50 

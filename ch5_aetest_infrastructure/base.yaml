@@ -1,0 +1,3 @@
+# testscript parameters 
+parameters: 
+    cloudflare_dns: 1.1.1.1
