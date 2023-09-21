@@ -1,0 +1,83 @@
+testbed:
+    name: Cat8k Lab
+devices:
+    # terminal_server:
+    #     os: linux
+    #     type: server
+    #     credentials:
+    #         default:
+    #             username: change_me
+    #             password: change_me
+    #     connections:
+    #         cli:
+    #             protocol: ssh
+    #             ip: 192.168.7.85
+    #             port: 22
+    cat8k-rt2:
+        os: iosxe
+        type: router
+        platform: csr1000v
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            # a:
+            #     protocol: telnet
+            #     proxy: terminal_server
+            #     command: open /Cat8k Lab/cat8k-rt2/0
+            cli:
+                protocol: ssh
+                ip: 192.168.7.97
+                port: 22
+    cat8k-rt1:
+        os: iosxe
+        type: router
+        platform: csr1000v
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            # a:
+            #     protocol: telnet
+            #     proxy: terminal_server
+            #     command: open /Cat8k Lab/cat8k-rt1/0
+            cli:
+                protocol: ssh
+                ip: 192.168.7.96
+                port: 22
+topology:
+    cat8k-rt2:
+        interfaces:
+            Loopback0:
+                type: loopback
+            GigabitEthernet1:
+                link: c9c08a5a-e09a-4e31-88a1-6d89f089c4d0
+                type: ethernet
+            GigabitEthernet2:
+                type: ethernet
+            GigabitEthernet3:
+                type: ethernet
+            GigabitEthernet4:
+                link: 8d1b2be1-de75-4ef2-bf4e-f20f6a89b75b
+                type: ethernet
+    cat8k-rt1:
+        interfaces:
+            Loopback0:
+                type: loopback
+            GigabitEthernet1:
+                link: cecf0ee3-5e47-4ace-b604-dd625965d182
+                type: ethernet
+            GigabitEthernet2:
+                type: ethernet
+            GigabitEthernet3:
+                type: ethernet
+            GigabitEthernet4:
+                link: 276e27db-32bd-4636-8d4b-fd8e7027bc8d
+                type: ethernet
+
