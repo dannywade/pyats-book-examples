@@ -13,7 +13,7 @@ def non_traffic_sanities(*groups):
 
 # Runs the testscript as two tasks using different logic testing
 def main(runtime):
-    ### Using function testing to evaluate testcase groups ###
+    ### Using function testing (callable) to evaluate testcase groups ###
     # Only runs Testcase Two
     run(testscript="example_script.py", runtime=runtime, groups=non_traffic_sanities)
 

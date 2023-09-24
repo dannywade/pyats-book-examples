@@ -11,8 +11,8 @@ def run_only_testcase_one(*uids):
     return "TestcaseOne" in uids
 
 
-# run only testcase_one and its contents (using callable)
-# executing uids has testcase_one:
+# run only TestcaseOne and its contents (using callable)
+# executing uids has TestcaseOne:
 def main():
     run("example_script.py", uids=run_only_testcase_one)
 
