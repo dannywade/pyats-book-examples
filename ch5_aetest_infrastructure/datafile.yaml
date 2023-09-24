@@ -19,19 +19,15 @@ testcases:
             remote_asn: 65001 
 
         # testcase class variable  
-        expected_routes: 5 
+        expected_routes: 1
  
-    OSPFTestcase: 
+    ExternalConnectivity: 
         # testcase uid
-        uid: routing_test_2
+        uid: ext_test_dns
 
         # list of groups that testcase belongs to
         groups: [routing] 
  
         # testcase parameters 
         parameters: 
-            process_id: 2 
-            area: 0 
-
-        # testcase class variable 
-        expected_routes: 50 
+            alt_google_dns: 8.8.4.4

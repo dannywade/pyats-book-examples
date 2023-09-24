@@ -9,7 +9,8 @@ class TestcaseOne(aetest.Testcase):
     @aetest.test
     def test1(self):
         """Code for first test"""
-        pass
+        # Print UID of Testcase One
+        print(f"Testcase One UID: {self.uid}")
 
     @aetest.test
     def test2(self):
@@ -23,7 +24,7 @@ class TestcaseOne(aetest.Testcase):
 
 
 class TestcaseTwo(aetest.Testcase):
-    """Testcase One"""
+    """Testcase Two"""
 
     groups = ["sanity"]
 
