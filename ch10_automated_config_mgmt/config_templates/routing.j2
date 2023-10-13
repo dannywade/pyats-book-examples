@@ -1,0 +1,4 @@
+router bgp {{ bgp_data.bgp_as }}
+  {% for neighbor in bgp_data.neighbor_ips -%}
+  neighbor {{ neighbor }} remote-as 65000 activate
+  {% endfor -%}
