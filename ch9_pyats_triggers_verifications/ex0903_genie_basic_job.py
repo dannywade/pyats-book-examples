@@ -1,18 +1,13 @@
-from genie.harness.main import gRun 
- 
+from genie.harness.main import gRun
+
 # To run job (Example 9-4): pyats run job ex0904_genie_harness_job.py --testbed-file testbed.yaml
 
 # NOTE: A testbed device must be named or have an alias of 'uut'. Otherwise, a trigger and/or verification datafile must be included in gRun args
 
-def main(): 
- 
+
+def main():
     # Using built-in triggers and verifications
-    gRun(trigger_uids=['TriggerSleep'], 
-         verification_uids=['Verify_IpInterfaceBrief'])
-
-
-
-
+    gRun(trigger_uids=["TriggerSleep"], verification_uids=["Verify_IpInterfaceBrief"])
 
 
 ### SAMPLE OUTPUT ###
@@ -24,11 +19,11 @@ def main():
 # 2023-08-03T22:04:30: %EASYPY-INFO:     Blocked    : 0
 # 2023-08-03T22:04:30: %EASYPY-INFO:     Skipped    : 0
 # 2023-08-03T22:04:30: %EASYPY-INFO:     Errored    : 0
-# 2023-08-03T22:04:30: %EASYPY-INFO: 
+# 2023-08-03T22:04:30: %EASYPY-INFO:
 # 2023-08-03T22:04:30: %EASYPY-INFO:     TOTAL      : 5
-# 2023-08-03T22:04:30: %EASYPY-INFO: 
+# 2023-08-03T22:04:30: %EASYPY-INFO:
 # 2023-08-03T22:04:30: %EASYPY-INFO: Success Rate   : 100.00 %
-# 2023-08-03T22:04:30: %EASYPY-INFO: 
+# 2023-08-03T22:04:30: %EASYPY-INFO:
 # 2023-08-03T22:04:30: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T22:04:30: %EASYPY-INFO: |                             Task Result Summary                              |
 # 2023-08-03T22:04:30: %EASYPY-INFO: +------------------------------------------------------------------------------+
@@ -37,7 +32,7 @@ def main():
 # 2023-08-03T22:04:30: %EASYPY-INFO: Task-1: genie_testscript.TriggerSleep.uut                                 PASSED
 # 2023-08-03T22:04:30: %EASYPY-INFO: Task-1: genie_testscript.Verifications.post                               PASSED
 # 2023-08-03T22:04:30: %EASYPY-INFO: Task-1: genie_testscript.common_cleanup                                   PASSED
-# 2023-08-03T22:04:30: %EASYPY-INFO: 
+# 2023-08-03T22:04:30: %EASYPY-INFO:
 # 2023-08-03T22:04:30: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T22:04:30: %EASYPY-INFO: |                             Task Result Details                              |
 # 2023-08-03T22:04:30: %EASYPY-INFO: +------------------------------------------------------------------------------+

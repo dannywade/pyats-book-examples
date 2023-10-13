@@ -3,17 +3,14 @@ from genie.harness.main import gRun
 # To run job:
 # pyats run job ex0917_complete_example.py  --testbed-file testbed2.yaml
 
+
 def main():
     gRun(
         trigger_uids=["TriggerShutNoShutOspf"],
         trigger_datafile="ex0917_trigger_datafile.yaml",
         verification_uids=["Verify_IpOspfDatabaseRouter"],
-        verification_datafile="ex0917_verification_datafile.yaml"
+        verification_datafile="ex0917_verification_datafile.yaml",
     )
-
-
-
-
 
 
 ### SAMPLE OUTPUT ###
@@ -25,11 +22,11 @@ def main():
 # 2023-08-08T23:01:49: %EASYPY-INFO:     Blocked    : 0
 # 2023-08-08T23:01:49: %EASYPY-INFO:     Skipped    : 0
 # 2023-08-08T23:01:49: %EASYPY-INFO:     Errored    : 0
-# 2023-08-08T23:01:49: %EASYPY-INFO: 
+# 2023-08-08T23:01:49: %EASYPY-INFO:
 # 2023-08-08T23:01:49: %EASYPY-INFO:     TOTAL      : 7
-# 2023-08-08T23:01:49: %EASYPY-INFO: 
+# 2023-08-08T23:01:49: %EASYPY-INFO:
 # 2023-08-08T23:01:49: %EASYPY-INFO: Success Rate   : 100.00 %
-# 2023-08-08T23:01:49: %EASYPY-INFO: 
+# 2023-08-08T23:01:49: %EASYPY-INFO:
 # 2023-08-08T23:01:49: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-08T23:01:49: %EASYPY-INFO: |                             Task Result Summary                              |
 # 2023-08-08T23:01:49: %EASYPY-INFO: +------------------------------------------------------------------------------+
@@ -40,7 +37,7 @@ def main():
 # 2023-08-08T23:01:49: %EASYPY-INFO: Task-1: genie_testscript.TriggerShutNoShutOspf.iosv-1                     PASSED
 # 2023-08-08T23:01:49: %EASYPY-INFO: Task-1: genie_testscript.Verifications.post                               PASSED
 # 2023-08-08T23:01:49: %EASYPY-INFO: Task-1: genie_testscript.common_cleanup                                   PASSED
-# 2023-08-08T23:01:49: %EASYPY-INFO: 
+# 2023-08-08T23:01:49: %EASYPY-INFO:
 # 2023-08-08T23:01:49: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-08T23:01:49: %EASYPY-INFO: |                             Task Result Details                              |
 # 2023-08-08T23:01:49: %EASYPY-INFO: +------------------------------------------------------------------------------+

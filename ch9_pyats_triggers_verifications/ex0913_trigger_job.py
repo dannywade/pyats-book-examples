@@ -8,12 +8,8 @@ from genie.harness.main import gRun
 def main():
     gRun(
         trigger_uids=["TriggerShutNoShutOspf"],
-        trigger_datafile="ex0912_trigger_datafile.yaml"
+        trigger_datafile="ex0912_trigger_datafile.yaml",
     )
-
-
-
-
 
 
 ### SAMPLE OUTPUT ###
@@ -25,11 +21,11 @@ def main():
 # 2023-08-03T23:12:49: %EASYPY-INFO:     Blocked    : 0
 # 2023-08-03T23:12:49: %EASYPY-INFO:     Skipped    : 0
 # 2023-08-03T23:12:49: %EASYPY-INFO:     Errored    : 0
-# 2023-08-03T23:12:49: %EASYPY-INFO: 
+# 2023-08-03T23:12:49: %EASYPY-INFO:
 # 2023-08-03T23:12:49: %EASYPY-INFO:     TOTAL      : 4
-# 2023-08-03T23:12:49: %EASYPY-INFO: 
+# 2023-08-03T23:12:49: %EASYPY-INFO:
 # 2023-08-03T23:12:49: %EASYPY-INFO: Success Rate   : 100.00 %
-# 2023-08-03T23:12:49: %EASYPY-INFO: 
+# 2023-08-03T23:12:49: %EASYPY-INFO:
 # 2023-08-03T23:12:49: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T23:12:49: %EASYPY-INFO: |                             Task Result Summary                              |
 # 2023-08-03T23:12:49: %EASYPY-INFO: +------------------------------------------------------------------------------+
@@ -37,7 +33,7 @@ def main():
 # 2023-08-03T23:12:49: %EASYPY-INFO: Task-1: genie_testscript.TriggerShutNoShutOspf.iosv-0                     PASSED
 # 2023-08-03T23:12:49: %EASYPY-INFO: Task-1: genie_testscript.TriggerShutNoShutOspf.iosv-1                     PASSED
 # 2023-08-03T23:12:49: %EASYPY-INFO: Task-1: genie_testscript.common_cleanup                                   PASSED
-# 2023-08-03T23:12:49: %EASYPY-INFO: 
+# 2023-08-03T23:12:49: %EASYPY-INFO:
 # 2023-08-03T23:12:49: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T23:12:49: %EASYPY-INFO: |                             Task Result Details                              |
 # 2023-08-03T23:12:49: %EASYPY-INFO: +------------------------------------------------------------------------------+

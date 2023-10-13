@@ -1,57 +1,62 @@
-from pyats import aetest 
+from pyats import aetest
+
 
 # Custom library used for testing
 class mylibrary:
     __version__ = 0.1
 
-# skip testcase intentionally 
-@aetest.skip('because we had to') 
-class Testcase(aetest.Testcase): 
-    pass 
- 
-class TestcaseTwo(aetest.Testcase): 
- 
-    # skip test section using if library version < some number 
-    @aetest.skipIf(mylibrary.__version__ < 1, 'not supported in this library version') 
-    @aetest.test 
-    def test_one(self): 
-        pass 
- 
-    # skip unless library version > some number 
-    @aetest.skipUnless(mylibrary.__version__ > 3, 'not supported in this library version') 
-    @aetest.test 
-    def test_two(self): 
-        pass 
- 
-    @aetest.test 
-    def test_three(self): 
-        aetest.skip.affix(section = TestcaseTwo.test_four, 
-                          reason = "message") 
-        aetest.skipIf.affix(section = TestcaseTwo.test_five, 
-                            condition = True, 
-                            reason = "message") 
-        aetest.skipUnless.affix(section = TestcaseThree, 
-                                condition = False, 
-                                reason = "message") 
- 
-    @aetest.test 
-    def test_four(self): 
-        # will be skipped because of test_three 
-        pass 
- 
-    @aetest.test 
-    def test_five(self): 
-        # will be skipped because of test_three 
-        pass 
- 
-    @aetest.test 
-    def test_six(self): 
-        # will be skipped because of test_three 
-        pass 
- 
-class TestcaseThree(aetest.Testcase): 
-    # will be skipped because of TestcaseTwo.test_three 
-    pass 
+
+# skip testcase intentionally
+@aetest.skip("because we had to")
+class Testcase(aetest.Testcase):
+    pass
+
+
+class TestcaseTwo(aetest.Testcase):
+    # skip test section using if library version < some number
+    @aetest.skipIf(mylibrary.__version__ < 1, "not supported in this library version")
+    @aetest.test
+    def test_one(self):
+        pass
+
+    # skip unless library version > some number
+    @aetest.skipUnless(
+        mylibrary.__version__ > 3, "not supported in this library version"
+    )
+    @aetest.test
+    def test_two(self):
+        pass
+
+    @aetest.test
+    def test_three(self):
+        aetest.skip.affix(section=TestcaseTwo.test_four, reason="message")
+        aetest.skipIf.affix(
+            section=TestcaseTwo.test_five, condition=True, reason="message"
+        )
+        aetest.skipUnless.affix(
+            section=TestcaseThree, condition=False, reason="message"
+        )
+
+    @aetest.test
+    def test_four(self):
+        # will be skipped because of test_three
+        pass
+
+    @aetest.test
+    def test_five(self):
+        # will be skipped because of test_three
+        pass
+
+    @aetest.test
+    def test_six(self):
+        # will be skipped because of test_three
+        pass
+
+
+class TestcaseThree(aetest.Testcase):
+    # will be skipped because of TestcaseTwo.test_three
+    pass
+
 
 if __name__ == "__main__":
     aetest.main()
@@ -103,7 +108,7 @@ if __name__ == "__main__":
 # 2023-09-21T01:09:53: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-21T01:09:53: %AETEST-INFO: |                               Detailed Results                               |
 # 2023-09-21T01:09:53: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-21T01:09:53: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT   
+# 2023-09-21T01:09:53: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT
 # 2023-09-21T01:09:53: %AETEST-INFO: --------------------------------------------------------------------------------
 # 2023-09-21T01:09:53: %AETEST-INFO: .
 # 2023-09-21T01:09:53: %AETEST-INFO: |-- Testcase                                                             SKIPPED
@@ -118,13 +123,13 @@ if __name__ == "__main__":
 # 2023-09-21T01:09:53: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-21T01:09:53: %AETEST-INFO: |                                   Summary                                    |
 # 2023-09-21T01:09:53: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-21T01:09:53: %AETEST-INFO:  Number of ABORTED                                                            0 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Number of BLOCKED                                                            0 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Number of ERRORED                                                            0 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Number of FAILED                                                             0 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Number of PASSED                                                             1 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Number of PASSX                                                              0 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Number of SKIPPED                                                            2 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Total Number                                                                 3 
-# 2023-09-21T01:09:53: %AETEST-INFO:  Success Rate                                                            100.0% 
+# 2023-09-21T01:09:53: %AETEST-INFO:  Number of ABORTED                                                            0
+# 2023-09-21T01:09:53: %AETEST-INFO:  Number of BLOCKED                                                            0
+# 2023-09-21T01:09:53: %AETEST-INFO:  Number of ERRORED                                                            0
+# 2023-09-21T01:09:53: %AETEST-INFO:  Number of FAILED                                                             0
+# 2023-09-21T01:09:53: %AETEST-INFO:  Number of PASSED                                                             1
+# 2023-09-21T01:09:53: %AETEST-INFO:  Number of PASSX                                                              0
+# 2023-09-21T01:09:53: %AETEST-INFO:  Number of SKIPPED                                                            2
+# 2023-09-21T01:09:53: %AETEST-INFO:  Total Number                                                                 3
+# 2023-09-21T01:09:53: %AETEST-INFO:  Success Rate                                                            100.0%
 # 2023-09-21T01:09:53: %AETEST-INFO: --------------------------------------------------------------------------------

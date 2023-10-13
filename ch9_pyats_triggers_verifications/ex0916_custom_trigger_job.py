@@ -4,15 +4,12 @@ from genie.harness.main import gRun
 # To run job:
 # pyats run job ex0916_custom_trigger_job.py  --testbed-file testbed2.yaml
 
+
 def main():
     gRun(
         trigger_uids=["TriggerMyShutNoShutOspf"],
         trigger_datafile="ex0915_custom_trigger_datafile.yaml",
     )
-
-
-
-
 
 
 ### SAMPLE OUTPUT ###
@@ -24,11 +21,11 @@ def main():
 # 2023-08-03T23:26:09: %EASYPY-INFO:     Blocked    : 0
 # 2023-08-03T23:26:09: %EASYPY-INFO:     Skipped    : 0
 # 2023-08-03T23:26:09: %EASYPY-INFO:     Errored    : 0
-# 2023-08-03T23:26:09: %EASYPY-INFO: 
+# 2023-08-03T23:26:09: %EASYPY-INFO:
 # 2023-08-03T23:26:09: %EASYPY-INFO:     TOTAL      : 4
-# 2023-08-03T23:26:09: %EASYPY-INFO: 
+# 2023-08-03T23:26:09: %EASYPY-INFO:
 # 2023-08-03T23:26:09: %EASYPY-INFO: Success Rate   : 100.00 %
-# 2023-08-03T23:26:09: %EASYPY-INFO: 
+# 2023-08-03T23:26:09: %EASYPY-INFO:
 # 2023-08-03T23:26:09: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T23:26:09: %EASYPY-INFO: |                             Task Result Summary                              |
 # 2023-08-03T23:26:09: %EASYPY-INFO: +------------------------------------------------------------------------------+
@@ -36,7 +33,7 @@ def main():
 # 2023-08-03T23:26:09: %EASYPY-INFO: Task-1: genie_testscript.TriggerMyShutNoShutOspf.iosv-0                   PASSED
 # 2023-08-03T23:26:09: %EASYPY-INFO: Task-1: genie_testscript.TriggerMyShutNoShutOspf.iosv-1                   PASSED
 # 2023-08-03T23:26:09: %EASYPY-INFO: Task-1: genie_testscript.common_cleanup                                   PASSED
-# 2023-08-03T23:26:09: %EASYPY-INFO: 
+# 2023-08-03T23:26:09: %EASYPY-INFO:
 # 2023-08-03T23:26:09: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T23:26:09: %EASYPY-INFO: |                             Task Result Details                              |
 # 2023-08-03T23:26:09: %EASYPY-INFO: +------------------------------------------------------------------------------+

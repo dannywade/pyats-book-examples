@@ -30,24 +30,24 @@ class BGPTestcase(aetest.Testcase):
         print(f"All class variables: {vars(BGPTestcase)}")
         # Example Output
         # {'__module__': '__main__', 'check_bgp_routes': <function BGPTestcase.check_bgp_routes at 0x10bf30430>, '__parameters__': {'local_asn': 65000, 'remote_asn': 65001},
-        # '__doc__': None, 'source': <pyats.aetest.base.Source object at 0x10beeebb0>, '__uid__': 'routing_test_1', 'groups': ['routing'], 'expected_routes': 1, 
+        # '__doc__': None, 'source': <pyats.aetest.base.Source object at 0x10beeebb0>, '__uid__': 'routing_test_1', 'groups': ['routing'], 'expected_routes': 1,
         # 'uid': <property object at 0x108195b30>}
 
         # Print available test parameters (provided by datafile) - includes TestScript and Testcase-level parameters
         print(f"Available testcase parameters: {self.parameters}")
         # Example Output
         # ParameterMap({'local_asn': 65000, 'remote_asn': 65001}, {'cloudflare_dns': '1.1.1.1', 'google_dns': '8.8.8.8', 'testbed': <Testbed object 'Cat8k Lab' at 0x108cfa490>})
-        
+
         # Parse 'show up route bgp' command output using Genie parsers
         r1_bgp_routes = testbed.devices["cat8k-rt1"].parse("show ip route bgp")
         r2_bgp_routes = testbed.devices["cat8k-rt2"].parse("show ip route bgp")
 
         # Capture the number of BGP routes in the routing table using the Genie Dq library
-        self.r1_route_count = (
-            len(Dq(r1_bgp_routes).contains("routes").get_values("route"))
+        self.r1_route_count = len(
+            Dq(r1_bgp_routes).contains("routes").get_values("route")
         )
-        self.r2_route_count = (
-            len(Dq(r2_bgp_routes).contains("routes").get_values("route"))
+        self.r2_route_count = len(
+            Dq(r2_bgp_routes).contains("routes").get_values("route")
         )
 
         # Confirm number of BGP routes equals the expected number of routes provided as a class variable in the datafile
@@ -56,18 +56,22 @@ class BGPTestcase(aetest.Testcase):
                 "There were the correct number of expected BGP routes on router 1."
             )
         else:
-            self.failed(f"Router 1 does not have the expected number of BGP routes ({self.expected_routes}). Instead, there are {self.r1_route_count} BGP routes.")
+            self.failed(
+                f"Router 1 does not have the expected number of BGP routes ({self.expected_routes}). Instead, there are {self.r1_route_count} BGP routes."
+            )
         if self.r2_route_count == self.expected_routes:
             self.passed(
                 "There were the correct number of expected BGP routes on router 2."
             )
         else:
-            self.failed(f"Router 2 does not have the expected number of BGP routes ({self.expected_routes}). Instead, there are {self.r2_route_count} BGP routes.")
+            self.failed(
+                f"Router 2 does not have the expected number of BGP routes ({self.expected_routes}). Instead, there are {self.r2_route_count} BGP routes."
+            )
 
 
 class ExternalConnectivity(aetest.Testcase):
     """Test external connectivity by pinging external DNS servers (Google and Cloudflare) using pyATS device Ping API.
-    
+
     There are no pass/fail conditions in this testcase, as the goal is to illustrate the use of datafile input parameters. All tests will pass.
     """
 
@@ -92,6 +96,7 @@ class ExternalConnectivity(aetest.Testcase):
         testbed.devices["cat8k-rt1"].api.ping(self.parameters["google_dns"])
         testbed.devices["cat8k-rt1"].api.ping(self.parameters["alt_google_dns"])
 
+
 class CommonCleanup(aetest.CommonCleanup):
     @aetest.subsection
     def disconnect_from_devices(self, testbed):
@@ -99,8 +104,8 @@ class CommonCleanup(aetest.CommonCleanup):
         testbed.disconnect()
         logger.info(f"Disconnected from all devices in {testbed.name}")
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     from pyats.topology.loader import load
 
     # Load testbed object from testbed file
@@ -113,7 +118,7 @@ if __name__ == "__main__":
 # 2023-09-24T12:59:27: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-24T12:59:27: %AETEST-INFO: |                               Detailed Results                               |
 # 2023-09-24T12:59:27: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-24T12:59:27: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT   
+# 2023-09-24T12:59:27: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT
 # 2023-09-24T12:59:27: %AETEST-INFO: --------------------------------------------------------------------------------
 # 2023-09-24T12:59:27: %AETEST-INFO: .
 # 2023-09-24T12:59:27: %AETEST-INFO: |-- common_setup                                                          PASSED
@@ -128,12 +133,12 @@ if __name__ == "__main__":
 # 2023-09-24T12:59:27: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-24T12:59:27: %AETEST-INFO: |                                   Summary                                    |
 # 2023-09-24T12:59:27: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-24T12:59:27: %AETEST-INFO:  Number of ABORTED                                                            0 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Number of BLOCKED                                                            0 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Number of ERRORED                                                            0 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Number of FAILED                                                             0 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Number of PASSED                                                             4 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Number of PASSX                                                              0 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Number of SKIPPED                                                            0 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Total Number                                                                 4 
-# 2023-09-24T12:59:27: %AETEST-INFO:  Success Rate                                                            100.0% 
+# 2023-09-24T12:59:27: %AETEST-INFO:  Number of ABORTED                                                            0
+# 2023-09-24T12:59:27: %AETEST-INFO:  Number of BLOCKED                                                            0
+# 2023-09-24T12:59:27: %AETEST-INFO:  Number of ERRORED                                                            0
+# 2023-09-24T12:59:27: %AETEST-INFO:  Number of FAILED                                                             0
+# 2023-09-24T12:59:27: %AETEST-INFO:  Number of PASSED                                                             4
+# 2023-09-24T12:59:27: %AETEST-INFO:  Number of PASSX                                                              0
+# 2023-09-24T12:59:27: %AETEST-INFO:  Number of SKIPPED                                                            0
+# 2023-09-24T12:59:27: %AETEST-INFO:  Total Number                                                                 4
+# 2023-09-24T12:59:27: %AETEST-INFO:  Success Rate                                                            100.0%

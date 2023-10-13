@@ -1,18 +1,19 @@
-from pyats import aetest 
- 
-class ResultTestcase(aetest.Testcase): 
- 
-    @aetest.test 
-    def subsection_that_passes(self): 
-        self.passed("This test passed!") 
- 
-    @aetest.test 
-    def subsection_that_skips(self): 
-        self.skipped("This test skipped!") 
- 
-    @aetest.test 
-    def subsection_that_is_errored(self): 
-        self.errored("This test errored!") 
+from pyats import aetest
+
+
+class ResultTestcase(aetest.Testcase):
+    @aetest.test
+    def subsection_that_passes(self):
+        self.passed("This test passed!")
+
+    @aetest.test
+    def subsection_that_skips(self):
+        self.skipped("This test skipped!")
+
+    @aetest.test
+    def subsection_that_is_errored(self):
+        self.errored("This test errored!")
+
 
 if __name__ == "__main__":
     aetest.main()
@@ -40,7 +41,7 @@ if __name__ == "__main__":
 # 2023-09-20T01:24:51: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-20T01:24:51: %AETEST-INFO: |                               Detailed Results                               |
 # 2023-09-20T01:24:51: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-20T01:24:51: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT   
+# 2023-09-20T01:24:51: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT
 # 2023-09-20T01:24:51: %AETEST-INFO: --------------------------------------------------------------------------------
 # 2023-09-20T01:24:51: %AETEST-INFO: .
 # 2023-09-20T01:24:51: %AETEST-INFO: `-- ResultTestcase                                                       ERRORED
@@ -50,13 +51,13 @@ if __name__ == "__main__":
 # 2023-09-20T01:24:51: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-20T01:24:51: %AETEST-INFO: |                                   Summary                                    |
 # 2023-09-20T01:24:51: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-20T01:24:51: %AETEST-INFO:  Number of ABORTED                                                            0 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Number of BLOCKED                                                            0 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Number of ERRORED                                                            1 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Number of FAILED                                                             0 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Number of PASSED                                                             0 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Number of PASSX                                                              0 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Number of SKIPPED                                                            0 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Total Number                                                                 1 
-# 2023-09-20T01:24:51: %AETEST-INFO:  Success Rate                                                              0.0% 
+# 2023-09-20T01:24:51: %AETEST-INFO:  Number of ABORTED                                                            0
+# 2023-09-20T01:24:51: %AETEST-INFO:  Number of BLOCKED                                                            0
+# 2023-09-20T01:24:51: %AETEST-INFO:  Number of ERRORED                                                            1
+# 2023-09-20T01:24:51: %AETEST-INFO:  Number of FAILED                                                             0
+# 2023-09-20T01:24:51: %AETEST-INFO:  Number of PASSED                                                             0
+# 2023-09-20T01:24:51: %AETEST-INFO:  Number of PASSX                                                              0
+# 2023-09-20T01:24:51: %AETEST-INFO:  Number of SKIPPED                                                            0
+# 2023-09-20T01:24:51: %AETEST-INFO:  Total Number                                                                 1
+# 2023-09-20T01:24:51: %AETEST-INFO:  Success Rate                                                              0.0%
 # 2023-09-20T01:24:51: %AETEST-INFO: --------------------------------------------------------------------------------

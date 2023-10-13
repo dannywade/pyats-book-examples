@@ -8,12 +8,8 @@ from genie.harness.main import gRun
 def main():
     gRun(
         verification_uids=["Verify_Interfaces", "Verify_Bgp"],
-        verification_datafile="ex0910_custom_verification.yaml"
+        verification_datafile="ex0910_custom_verification.yaml",
     )
-
-
-
-
 
 
 ### SAMPLE OUTPUT ###
@@ -25,18 +21,18 @@ def main():
 # 2023-08-03T22:59:38: %EASYPY-INFO:     Blocked    : 0
 # 2023-08-03T22:59:38: %EASYPY-INFO:     Skipped    : 0
 # 2023-08-03T22:59:38: %EASYPY-INFO:     Errored    : 0
-# 2023-08-03T22:59:38: %EASYPY-INFO: 
+# 2023-08-03T22:59:38: %EASYPY-INFO:
 # 2023-08-03T22:59:38: %EASYPY-INFO:     TOTAL      : 3
-# 2023-08-03T22:59:38: %EASYPY-INFO: 
+# 2023-08-03T22:59:38: %EASYPY-INFO:
 # 2023-08-03T22:59:38: %EASYPY-INFO: Success Rate   : 100.00 %
-# 2023-08-03T22:59:38: %EASYPY-INFO: 
+# 2023-08-03T22:59:38: %EASYPY-INFO:
 # 2023-08-03T22:59:38: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T22:59:38: %EASYPY-INFO: |                             Task Result Summary                              |
 # 2023-08-03T22:59:38: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T22:59:38: %EASYPY-INFO: Task-1: genie_testscript.common_setup                                     PASSED
 # 2023-08-03T22:59:38: %EASYPY-INFO: Task-1: genie_testscript.Verifications.post                               PASSED
 # 2023-08-03T22:59:38: %EASYPY-INFO: Task-1: genie_testscript.common_cleanup                                   PASSED
-# 2023-08-03T22:59:38: %EASYPY-INFO: 
+# 2023-08-03T22:59:38: %EASYPY-INFO:
 # 2023-08-03T22:59:38: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-08-03T22:59:38: %EASYPY-INFO: |                             Task Result Details                              |
 # 2023-08-03T22:59:38: %EASYPY-INFO: +------------------------------------------------------------------------------+

@@ -1,6 +1,8 @@
 from pyats.easypy import run
+
 # import the logic objects
 from pyats.datastructures.logic import And, Not
+
 
 # create a function that tests for testcase groups
 # this api tests that a testcase belongs to sanity but not traffic.
@@ -32,7 +34,7 @@ def main(runtime):
 # 2023-09-24T13:51:53: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-09-24T13:51:53: %EASYPY-INFO: Task-1: example_script.TestcaseTwo                                        PASSED
 # 2023-09-24T13:51:53: %EASYPY-INFO: Task-2: example_script.TestcaseTwo                                        PASSED
-# 2023-09-24T13:51:53: %EASYPY-INFO: 
+# 2023-09-24T13:51:53: %EASYPY-INFO:
 # 2023-09-24T13:51:53: %EASYPY-INFO: +------------------------------------------------------------------------------+
 # 2023-09-24T13:51:53: %EASYPY-INFO: |                             Task Result Details                              |
 # 2023-09-24T13:51:53: %EASYPY-INFO: +------------------------------------------------------------------------------+

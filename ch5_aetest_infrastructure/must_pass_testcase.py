@@ -1,22 +1,23 @@
-from pyats import aetest 
- 
- 
-class TestcaseOne(aetest.Testcase): 
- 
-    must_pass = True 
- 
-    @aetest.test 
-    def test(self): 
-        self.failed('boom!') 
- 
-class TestcaseTwo(aetest.Testcase): 
-    pass 
- 
+from pyats import aetest
+
+
+class TestcaseOne(aetest.Testcase):
+    must_pass = True
+
+    @aetest.test
+    def test(self):
+        self.failed("boom!")
+
+
+class TestcaseTwo(aetest.Testcase):
+    pass
+
+
 class CommonCleanup(aetest.CommonCleanup):
- 
-    @aetest.subsection 
-    def subsection(self): 
-        pass 
+    @aetest.subsection
+    def subsection(self):
+        pass
+
 
 if __name__ == "__main__":
     aetest.main()
@@ -49,7 +50,7 @@ if __name__ == "__main__":
 # 2023-09-21T01:27:04: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-21T01:27:04: %AETEST-INFO: |                               Detailed Results                               |
 # 2023-09-21T01:27:04: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-21T01:27:04: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT   
+# 2023-09-21T01:27:04: %AETEST-INFO:  SECTIONS/TESTCASES                                                      RESULT
 # 2023-09-21T01:27:04: %AETEST-INFO: --------------------------------------------------------------------------------
 # 2023-09-21T01:27:04: %AETEST-INFO: .
 # 2023-09-21T01:27:04: %AETEST-INFO: |-- TestcaseOne                                                           FAILED
@@ -60,13 +61,13 @@ if __name__ == "__main__":
 # 2023-09-21T01:27:04: %AETEST-INFO: +------------------------------------------------------------------------------+
 # 2023-09-21T01:27:04: %AETEST-INFO: |                                   Summary                                    |
 # 2023-09-21T01:27:04: %AETEST-INFO: +------------------------------------------------------------------------------+
-# 2023-09-21T01:27:04: %AETEST-INFO:  Number of ABORTED                                                            0 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Number of BLOCKED                                                            1 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Number of ERRORED                                                            0 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Number of FAILED                                                             1 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Number of PASSED                                                             1 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Number of PASSX                                                              0 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Number of SKIPPED                                                            0 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Total Number                                                                 3 
-# 2023-09-21T01:27:04: %AETEST-INFO:  Success Rate                                                             33.3% 
+# 2023-09-21T01:27:04: %AETEST-INFO:  Number of ABORTED                                                            0
+# 2023-09-21T01:27:04: %AETEST-INFO:  Number of BLOCKED                                                            1
+# 2023-09-21T01:27:04: %AETEST-INFO:  Number of ERRORED                                                            0
+# 2023-09-21T01:27:04: %AETEST-INFO:  Number of FAILED                                                             1
+# 2023-09-21T01:27:04: %AETEST-INFO:  Number of PASSED                                                             1
+# 2023-09-21T01:27:04: %AETEST-INFO:  Number of PASSX                                                              0
+# 2023-09-21T01:27:04: %AETEST-INFO:  Number of SKIPPED                                                            0
+# 2023-09-21T01:27:04: %AETEST-INFO:  Total Number                                                                 3
+# 2023-09-21T01:27:04: %AETEST-INFO:  Success Rate                                                             33.3%
 # 2023-09-21T01:27:04: %AETEST-INFO: --------------------------------------------------------------------------------
