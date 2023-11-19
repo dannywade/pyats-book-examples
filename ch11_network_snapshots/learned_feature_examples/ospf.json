@@ -1,0 +1,264 @@
+{
+    "vrf": {
+        "default": {
+            "address_family": {
+                "ipv4": {
+                    "instance": {
+                        "10": {
+                            "router_id": "10.254.1.1",
+                            "preference": {"single_value": {"all": 110}},
+                            "mpls": {
+                                "ldp": {
+                                    "autoconfig": False,
+                                    "autoconfig_area_id": "0.0.0.0",
+                                }
+                            },
+                            "areas": {
+                                "0.0.0.0": {
+                                    "mpls": {"te": {"enable": False}},
+                                    "database": {
+                                        "lsa_types": {
+                                            1: {
+                                                "lsa_type": 1,
+                                                "lsas": {
+                                                    "10.254.1.2 10.254.1.2": {
+                                                        "lsa_id": "10.254.1.2",
+                                                        "adv_router": "10.254.1.2",
+                                                        "ospfv2": {
+                                                            "header": {
+                                                                "option": "None",
+                                                                "lsa_id": "10.254.1.2",
+                                                                "age": 1086,
+                                                                "type": 1,
+                                                                "adv_router": "10.254.1.2",
+                                                                "seq_num": "80000005",
+                                                                "checksum": "0xA081",
+                                                                "length": 60,
+                                                            },
+                                                            "body": {
+                                                                "router": {
+                                                                    "num_of_links": 3,
+                                                                    "links": {
+                                                                        "172.16.1.2": {
+                                                                            "link_id": "172.16.1.2",
+                                                                            "link_data": "172.16.1.2",
+                                                                            "type": "transit network",
+                                                                            "topologies": {
+                                                                                0: {
+                                                                                    "mt_id": 0,
+                                                                                    "metric": 1,
+                                                                                }
+                                                                            },
+                                                                        },
+                                                                        "10.60.0.1": {
+                                                                            "link_id": "10.60.0.1",
+                                                                            "link_data": "255.255.255.255",
+                                                                            "type": "stub network",
+                                                                            "topologies": {
+                                                                                0: {
+                                                                                    "mt_id": 0,
+                                                                                    "metric": 1,
+                                                                                }
+                                                                            },
+                                                                        },
+                                                                        "10.254.1.2": {
+                                                                            "link_id": "10.254.1.2",
+                                                                            "link_data": "255.255.255.255",
+                                                                            "type": "stub network",
+                                                                            "topologies": {
+                                                                                0: {
+                                                                                    "mt_id": 0,
+                                                                                    "metric": 1,
+                                                                                }
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                }
+                                                            },
+                                                        },
+                                                    },
+                                                    "10.254.1.1 10.254.1.1": {
+                                                        "lsa_id": "10.254.1.1",
+                                                        "adv_router": "10.254.1.1",
+                                                        "ospfv2": {
+                                                            "header": {
+                                                                "option": "None",
+                                                                "lsa_id": "10.254.1.1",
+                                                                "age": 1089,
+                                                                "type": 1,
+                                                                "adv_router": "10.254.1.1",
+                                                                "seq_num": "80000005",
+                                                                "checksum": "0xB778",
+                                                                "length": 60,
+                                                            },
+                                                            "body": {
+                                                                "router": {
+                                                                    "num_of_links": 3,
+                                                                    "links": {
+                                                                        "172.16.1.2": {
+                                                                            "link_id": "172.16.1.2",
+                                                                            "link_data": "172.16.1.1",
+                                                                            "type": "transit network",
+                                                                            "topologies": {
+                                                                                0: {
+                                                                                    "mt_id": 0,
+                                                                                    "metric": 1,
+                                                                                }
+                                                                            },
+                                                                        },
+                                                                        "10.50.0.1": {
+                                                                            "link_id": "10.50.0.1",
+                                                                            "link_data": "255.255.255.255",
+                                                                            "type": "stub network",
+                                                                            "topologies": {
+                                                                                0: {
+                                                                                    "mt_id": 0,
+                                                                                    "metric": 1,
+                                                                                }
+                                                                            },
+                                                                        },
+                                                                        "10.254.1.1": {
+                                                                            "link_id": "10.254.1.1",
+                                                                            "link_data": "255.255.255.255",
+                                                                            "type": "stub network",
+                                                                            "topologies": {
+                                                                                0: {
+                                                                                    "mt_id": 0,
+                                                                                    "metric": 1,
+                                                                                }
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                }
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            2: {
+                                                "lsa_type": 2,
+                                                "lsas": {
+                                                    "172.16.1.2 10.254.1.2": {
+                                                        "lsa_id": "172.16.1.2",
+                                                        "adv_router": "10.254.1.2",
+                                                        "ospfv2": {
+                                                            "header": {
+                                                                "option": "None",
+                                                                "lsa_id": "172.16.1.2",
+                                                                "age": 1090,
+                                                                "type": 2,
+                                                                "adv_router": "10.254.1.2",
+                                                                "seq_num": "80000001",
+                                                                "checksum": "0x6EE8",
+                                                                "length": 32,
+                                                            },
+                                                            "body": {
+                                                                "network": {
+                                                                    "network_mask": "255.255.255.0",
+                                                                    "attached_routers": {
+                                                                        "10.254.1.2": {},
+                                                                        "10.254.1.1": {},
+                                                                    },
+                                                                }
+                                                            },
+                                                        },
+                                                    }
+                                                },
+                                            },
+                                        }
+                                    },
+                                    "area_id": "0.0.0.0",
+                                    "area_type": "normal",
+                                    "statistics": {
+                                        "spf_runs_count": 7,
+                                        "area_scope_lsa_count": 3,
+                                        "area_scope_lsa_cksum_sum": "0x01C6E1",
+                                    },
+                                    "interfaces": {
+                                        "GigabitEthernet4": {
+                                            "name": "GigabitEthernet4",
+                                            "interface_type": "broadcast",
+                                            "passive": False,
+                                            "demand_circuit": False,
+                                            "priority": 1,
+                                            "transmit_delay": 1,
+                                            "bfd": {"enable": False},
+                                            "hello_interval": 10,
+                                            "dead_interval": 40,
+                                            "retransmit_interval": 5,
+                                            "lls": True,
+                                            "enable": True,
+                                            "cost": 1,
+                                            "state": "bdr",
+                                            "hello_timer": "00:00:03",
+                                            "dr_router_id": "10.254.1.2",
+                                            "dr_ip_addr": "172.16.1.2",
+                                            "bdr_router_id": "10.254.1.1",
+                                            "bdr_ip_addr": "172.16.1.1",
+                                            "neighbors": {
+                                                "10.254.1.2": {
+                                                    "neighbor_router_id": "10.254.1.2",
+                                                    "address": "172.16.1.2",
+                                                    "dr_ip_addr": "172.16.1.2",
+                                                    "bdr_ip_addr": "172.16.1.1",
+                                                    "state": "full",
+                                                    "dead_timer": "00:00:32",
+                                                    "statistics": {
+                                                        "nbr_event_count": 6,
+                                                        "nbr_retrans_qlen": 0,
+                                                    },
+                                                }
+                                            },
+                                        },
+                                        "Loopback1": {
+                                            "name": "Loopback1",
+                                            "interface_type": "loopback",
+                                            "demand_circuit": False,
+                                            "bfd": {"enable": False},
+                                            "enable": True,
+                                            "cost": 1,
+                                        },
+                                        "Loopback0": {
+                                            "name": "Loopback0",
+                                            "interface_type": "loopback",
+                                            "demand_circuit": False,
+                                            "bfd": {"enable": False},
+                                            "enable": True,
+                                            "cost": 1,
+                                        },
+                                    },
+                                }
+                            },
+                            "nsr": {"enable": False},
+                            "graceful_restart": {
+                                "cisco": {"enable": False, "type": "cisco"},
+                                "ietf": {"enable": False, "type": "ietf"},
+                            },
+                            "auto_cost": {"enable": False},
+                            "spf_control": {
+                                "paths": 4,
+                                "throttle": {
+                                    "spf": {"start": 50, "hold": 200, "maximum": 5000},
+                                    "lsa": {"start": 50, "hold": 200, "maximum": 5000},
+                                },
+                            },
+                            "stub_router": {
+                                "always": {
+                                    "always": False,
+                                    "include_stub": False,
+                                    "summary_lsa": False,
+                                    "external_lsa": False,
+                                }
+                            },
+                            "bfd": {"enable": False},
+                            "adjacency_stagger": {
+                                "initial_number": 300,
+                                "maximum_number": 300,
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

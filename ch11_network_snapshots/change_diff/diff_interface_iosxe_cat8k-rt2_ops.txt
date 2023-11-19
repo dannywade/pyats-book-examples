@@ -1,0 +1,6 @@
+--- pre_change/interface_iosxe_cat8k-rt2_ops.txt
++++ post_change/interface_iosxe_cat8k-rt2_ops.txt
+ info:
+  GigabitEthernet4:
+-  mtu: 1500
++  mtu: 1530

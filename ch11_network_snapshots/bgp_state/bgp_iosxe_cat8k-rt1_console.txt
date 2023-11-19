@@ -1,0 +1,385 @@
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all summary' +++
+show bgp all summary
+For address family: IPv4 Unicast
+BGP router identifier 10.254.1.1, local AS number 65000
+BGP table version is 3, main routing table version 3
+2 network entries using 496 bytes of memory
+2 path entries using 272 bytes of memory
+2/2 BGP path/bestpath attribute entries using 592 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 1384 total bytes of memory
+BGP activity 2/0 prefixes, 2/0 paths, scan interval 60 secs
+2 networks peaked at 01:54:37 Nov 19 2023 UTC (00:02:11.459 ago)
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+172.16.1.2      4        65001       7       7        3    0    0 00:03:03        1
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show ip bgp template peer-session' +++
+show ip bgp template peer-session
+No templates configured
+
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show ip bgp template peer-policy' +++
+show ip bgp template peer-policy
+No templates configured
+
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show vrf detail | inc \(VRF' +++
+show vrf detail | inc \(VRF
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all cluster-ids' +++
+show bgp all cluster-ids
+Global cluster-id: 10.254.1.1 (configured: 0.0.0.0)
+BGP client-to-client reflection:         Configured    Used
+  all (inter-cluster and intra-cluster): ENABLED
+  intra-cluster:                         ENABLED       ENABLED
+
+List of cluster-ids:
+Cluster-id     #-neighbors C2C-rfl-CFG C2C-rfl-USE
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show ip bgp all dampening parameters' +++
+show ip bgp all dampening parameters
+For address family: IPv4 Unicast
+
+% dampening not enabled for base
+
+For address family: IPv4 Multicast
+
+% dampening not enabled for base
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors' +++
+show bgp all neighbors
+For address family: IPv4 Unicast
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  BGP version 4, remote router ID 10.254.1.2
+  BGP state = Established, up for 00:03:05
+  Last read 00:00:28, last write 00:00:18, hold time is 180, keepalive interval is 60 seconds
+  Last update received: 00:02:13
+  Neighbor sessions:
+    1 active, is not multisession capable (disabled)
+  Neighbor capabilities:
+    Route refresh: advertised and received(new)
+    Four-octets ASN Capability: advertised and received
+    Address family IPv4 Unicast: advertised and received
+    Enhanced Refresh Capability: advertised and received
+    Multisession Capability: 
+    Stateful switchover support enabled: NO for session 1
+  Message statistics:
+    InQ depth is 0
+    OutQ depth is 0
+    
+                         Sent       Rcvd
+    Opens:                  1          1
+    Notifications:          0          0
+    Updates:                2          2
+    Keepalives:             4          4
+    Route Refresh:          0          0
+    Total:                  7          7
+  Do log neighbor state changes (via global configuration)
+  Default minimum time between advertisement runs is 30 seconds
+
+  Address tracking is enabled, the RIB does have a route to 172.16.1.2
+  Route to peer address reachability Up: 1; Down: 0
+    Last notification 00:03:11
+  Connections established 1; dropped 0
+  Last reset never
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+  Interface associated: GigabitEthernet4 (peering address in same link)
+  Transport(tcp) path-mtu-discovery is enabled
+  Graceful-Restart is disabled
+  SSO is disabled
+Connection state is ESTAB, I/O status: 1, unread input bytes: 0            
+Connection is ECN Disabled, Mininum incoming TTL 0, Outgoing TTL 1
+Local host: 172.16.1.1, Local port: 179
+Foreign host: 172.16.1.2, Foreign port: 18680
+Connection tableid (VRF): 0
+Maximum output segment queue size: 50
+
+Enqueued packets for retransmit: 0, input: 0  mis-ordered: 0 (0 bytes)
+
+Event Timers (current time is 0x4F934):
+Timer          Starts    Wakeups            Next
+Retrans             7          0             0x0
+TimeWait            0          0             0x0
+AckHold             5          3             0x0
+SendWnd             0          0             0x0
+KeepAlive           0          0             0x0
+GiveUp              0          0             0x0
+PmtuAger            0          0             0x0
+DeadWait            0          0             0x0
+Linger              0          0             0x0
+ProcessQ            0          0             0x0
+
+iss: 3551646630  snduna: 3551646841  sndnxt: 3551646841
+irs:   43420182  rcvnxt:   43420393
+
+sndwnd:  16174  scale:      0  maxrcvwnd:  16384
+rcvwnd:  16174  scale:      0  delrcvwnd:    210
+
+SRTT: 607 ms, RTTO: 2949 ms, RTV: 2342 ms, KRTT: 0 ms
+minRTT: 206 ms, maxRTT: 1000 ms, ACK hold: 200 ms
+uptime: 185932 ms, Sent idletime: 18934 ms, Receive idletime: 18531 ms 
+Status Flags: passive open, gen tcbs
+Option Flags: nagle, path mtu capable
+IP Precedence value : 6
+
+Datagrams (max data segment is 1460 bytes):
+Rcvd: 13 (out of order: 0), with data: 6, total data bytes: 210
+Sent: 12 (retransmit: 0, fastretransmit: 0, partialack: 0, Second Congestion: 0), with data: 6, total data bytes: 210
+
+ Packets received in fast path: 0, fast processed: 0, slow path: 0
+ fast lock acquisition failures: 0, slow path: 0
+TCP Semaphore      0x7F54E1390750  FREE 
+
+
+For address family: IPv4 Multicast
+
+For address family: IPv4 Label-Unicast
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  BGP version 4, remote router ID 10.254.1.2
+  BGP state = Established, up for 00:03:05
+  Last read 00:00:28, last write 00:00:18, hold time is 180, keepalive interval is 60 seconds
+  Last update received: 00:02:13
+  Neighbor sessions:
+    1 active, is not multisession capable (disabled)
+  Neighbor capabilities:
+    Route refresh: advertised and received(new)
+    Four-octets ASN Capability: advertised and received
+    Address family IPv4 Unicast: advertised and received
+    Enhanced Refresh Capability: advertised and received
+    Multisession Capability: 
+    Stateful switchover support enabled: NO for session 1
+  Message statistics:
+    InQ depth is 0
+    OutQ depth is 0
+    
+                         Sent       Rcvd
+    Opens:                  1          1
+    Notifications:          0          0
+    Updates:                2          2
+    Keepalives:             4          4
+    Route Refresh:          0          0
+    Total:                  7          7
+  Do log neighbor state changes (via global configuration)
+  Default minimum time between advertisement runs is 30 seconds
+
+  Address tracking is enabled, the RIB does have a route to 172.16.1.2
+  Route to peer address reachability Up: 1; Down: 0
+    Last notification 00:03:11
+  Connections established 1; dropped 0
+  Last reset never
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+  Interface associated: GigabitEthernet4 (peering address in same link)
+  Transport(tcp) path-mtu-discovery is enabled
+  Graceful-Restart is disabled
+  SSO is disabled
+Connection state is ESTAB, I/O status: 1, unread input bytes: 0            
+Connection is ECN Disabled, Mininum incoming TTL 0, Outgoing TTL 1
+Local host: 172.16.1.1, Local port: 179
+Foreign host: 172.16.1.2, Foreign port: 18680
+Connection tableid (VRF): 0
+Maximum output segment queue size: 50
+
+Enqueued packets for retransmit: 0, input: 0  mis-ordered: 0 (0 bytes)
+
+Event Timers (current time is 0x4F935):
+Timer          Starts    Wakeups            Next
+Retrans             7          0             0x0
+TimeWait            0          0             0x0
+AckHold             5          3             0x0
+SendWnd             0          0             0x0
+KeepAlive           0          0             0x0
+GiveUp              0          0             0x0
+PmtuAger            0          0             0x0
+DeadWait            0          0             0x0
+Linger              0          0             0x0
+ProcessQ            0          0             0x0
+
+iss: 3551646630  snduna: 3551646841  sndnxt: 3551646841
+irs:   43420182  rcvnxt:   43420393
+
+sndwnd:  16174  scale:      0  maxrcvwnd:  16384
+rcvwnd:  16174  scale:      0  delrcvwnd:    210
+
+SRTT: 607 ms, RTTO: 2949 ms, RTV: 2342 ms, KRTT: 0 ms
+minRTT: 206 ms, maxRTT: 1000 ms, ACK hold: 200 ms
+uptime: 185933 ms, Sent idletime: 18935 ms, Receive idletime: 18532 ms 
+Status Flags: passive open, gen tcbs
+Option Flags: nagle, path mtu capable
+IP Precedence value : 6
+
+Datagrams (max data segment is 1460 bytes):
+Rcvd: 13 (out of order: 0), with data: 6, total data bytes: 210
+Sent: 12 (retransmit: 0, fastretransmit: 0, partialack: 0, Second Congestion: 0), with data: 6, total data bytes: 210
+
+ Packets received in fast path: 0, fast processed: 0, slow path: 0
+ fast lock acquisition failures: 0, slow path: 0
+TCP Semaphore      0x7F54E1390750  FREE 
+
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors 172.16.1.2 policy' +++
+show bgp all neighbors 172.16.1.2 policy
+ Neighbor: 172.16.1.2, Address-Family: IPv4 Unicast
+ Neighbor: 172.16.1.2, Address-Family: IPv4 Label-Unicast
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all' +++
+show bgp all
+For address family: IPv4 Unicast
+
+BGP table version is 3, local router ID is 10.254.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+              t secondary path, L long-lived-stale,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>   10.50.0.0/24     0.0.0.0                  0         32768 i
+ *>   10.60.0.0/24     172.16.1.2               0             0 65001 i
+
+For address family: IPv4 Multicast
+
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all detail' +++
+show bgp all detail
+For address family: IPv4 Unicast
+
+BGP routing table entry for 10.50.0.0/24, version 2
+  Paths: (1 available, best #1, table default)
+  Advertised to update-groups:
+     1         
+  Refresh Epoch 1
+  Local
+    0.0.0.0 from 0.0.0.0 (10.254.1.1)
+      Origin IGP, metric 0, localpref 100, weight 32768, valid, sourced, local, best
+      rx pathid: 0, tx pathid: 0x0
+      Updated on Nov 19 2023 01:53:36 UTC
+BGP routing table entry for 10.60.0.0/24, version 3
+  Paths: (1 available, best #1, table default)
+  Not advertised to any peer
+  Refresh Epoch 1
+  65001
+    172.16.1.2 from 172.16.1.2 (10.254.1.2)
+      Origin IGP, metric 0, localpref 100, valid, external, best
+      rx pathid: 0, tx pathid: 0x0
+      Updated on Nov 19 2023 01:54:37 UTC
+
+For address family: IPv4 Multicast
+
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors 172.16.1.2 advertised-routes' +++
+show bgp all neighbors 172.16.1.2 advertised-routes
+For address family: IPv4 Unicast
+BGP table version is 3, local router ID is 10.254.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+              t secondary path, L long-lived-stale,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>   10.50.0.0/24     0.0.0.0                  0         32768 i
+
+Total number of prefixes 1 
+
+For address family: IPv4 Label-Unicast
+BGP table version is 3, local router ID is 10.254.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+              t secondary path, L long-lived-stale,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>   10.50.0.0/24     0.0.0.0                  0         32768 i
+
+Total number of prefixes 1 
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors | i BGP neighbor' +++
+show bgp all neighbors | i BGP neighbor
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors 172.16.1.2 routes' +++
+show bgp all neighbors 172.16.1.2 routes
+For address family: IPv4 Unicast
+BGP table version is 3, local router ID is 10.254.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+              t secondary path, L long-lived-stale,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>   10.60.0.0/24     172.16.1.2               0             0 65001 i
+
+Total number of prefixes 1 
+
+For address family: IPv4 Label-Unicast
+BGP table version is 3, local router ID is 10.254.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+              t secondary path, L long-lived-stale,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>   10.60.0.0/24     172.16.1.2               0             0 65001 i
+
+Total number of prefixes 1 
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors | i BGP neighbor' +++
+show bgp all neighbors | i BGP neighbor
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors 172.16.1.2 received-routes' +++
+show bgp all neighbors 172.16.1.2 received-routes
+For address family: IPv4 Unicast
+% Inbound soft reconfiguration not enabled on 172.16.1.2
+
+For address family: IPv4 Label-Unicast
+% Inbound soft reconfiguration not enabled on 172.16.1.2
+cat8k-rt1#
++++ cat8k-rt1 with via 'cli': executing command 'show bgp all neighbors | i BGP neighbor' +++
+show bgp all neighbors | i BGP neighbor
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+BGP neighbor is 172.16.1.2,  remote AS 65001, external link
+  External BGP neighbor configured for connected checks (single-hop no-disable-connected-check)
+cat8k-rt1#
+Could not learn <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllNeighborsReceivedRoutes'>
+Show Command: show bgp all neighbors 172.16.1.2 received-routes
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Bgp'                                                                                                                |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllSummary'>, arguments: {'address_family':'','vrf':''}                                     |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllClusterIds'>                                                                             |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllNeighbors'>, arguments: {'address_family':'','neighbor':''}                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAll'>, arguments: {'address_family':''}                                                     |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllDetail'>, arguments: {'address_family':'','vrf':''}                                      |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllNeighborsAdvertisedRoutes'>, arguments: {'address_family':'','neighbor':'172.16.1.2'}    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllNeighborsRoutes'>, arguments: {'address_family':'','neighbor':'172.16.1.2'}              |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowIpBgpTemplatePeerSession'>                                                                     |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowIpBgpTemplatePeerPolicy'>                                                                      |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowIpBgpAllDampeningParameters'>                                                                  |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllNeighborsPolicy'>, arguments: {'neighbor':'172.16.1.2'}                                  |
+|   cmd: <class 'genie.libs.parser.iosxe.show_bgp.ShowBgpAllNeighborsReceivedRoutes'>, arguments: {'address_family':'','neighbor':'172.16.1.2'}      |
+|====================================================================================================================================================|

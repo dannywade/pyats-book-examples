@@ -1,0 +1,35 @@
+--- pre_change/ospf_iosxe_cat8k-rt1_ops.txt
++++ post_change/ospf_iosxe_cat8k-rt1_ops.txt
+ info:
+  vrf:
+   default:
+    address_family:
+     ipv4:
+      instance:
+       10:
+        areas:
+         0.0.0.0:
+          database:
+           lsa_types:
+-           2:
+-            lsa_type: 2
+-            lsas:
+-             172.16.1.1 10.254.1.1:
+-              adv_router: 10.254.1.1
+-              lsa_id: 172.16.1.1
+-              ospfv2:
+-               body:
+-                network:
+-                 attached_routers:
+-                  10.254.1.1:
+-                  10.254.1.2:
+-                 network_mask: 255.255.255.0
+-               header:
+-                adv_router: 10.254.1.1
+-                age: 72
+-                checksum: 0x7CD9
+-                length: 32
+-                lsa_id: 172.16.1.1
+-                option: None
+-                seq_num: 80000004
+-                type: 2
