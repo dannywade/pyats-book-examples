@@ -1,0 +1,78 @@
+testbed:
+    name: iosv switches
+devices:
+    ios-sw1:
+        os: ios
+        type: switch
+        platform: iosv
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: ssh
+                ip: 192.168.7.137
+                port: 22
+    ios-sw2:
+        os: ios
+        type: switch
+        platform: iosv
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: ssh
+                ip: 192.168.7.20
+                port: 22
+    ios-sw3:
+        os: ios
+        type: switch
+        platform: iosv
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: ssh
+                ip: 192.168.7.138
+                port: 22
+    ios-sw4:
+        os: ios
+        type: switch
+        platform: iosv
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: ssh
+                ip: 192.168.7.217
+                port: 22
+    ios-sw5:
+        os: ios
+        type: switch
+        platform: iosv
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: ssh
+                ip: 192.168.7.237
+                port: 22
